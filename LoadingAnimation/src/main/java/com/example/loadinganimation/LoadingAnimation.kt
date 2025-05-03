@@ -14,22 +14,22 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import kotlin.properties.Delegates
 
-class LoadingAnimation(context: Context, attributeSet: AttributeSet) :
+class LoadingAnimation(context: Context, attributeSet: AttributeSet?) :
     RelativeLayout(context, attributeSet) {
     private lateinit var imageView: ImageView;
 
-// Set Default value
+    // Set Default value
     private val default_msgTextView = "Please Wait..."
     private val default_textColor = Color.BLACK
     private val default_enlarge = 1
     private val default_textSize: Float = 15F
 
-// Set some attribute get form constructor
+    // Set some attribute get form constructor
     private var mContext: Context;
-    private var attrs: AttributeSet;
+    private var attrs: AttributeSet?;
     private var styleAttr: Int = 0;
-// Create some instance
-    private lateinit var drawableFile: Drawable
+    // Create some instance
+    private var drawableFile: Drawable? = context.getDrawable(R.drawable.triad_ring)
     private lateinit var bgprogress: View
     private lateinit var view: View
     private lateinit var tvMsg: TextView
@@ -67,9 +67,9 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet) :
 
 
 
-//    Extracting Attribute form XML
-   private fun initTypeArray(typedArray: TypedArray) {
-        drawableFile = typedArray.getDrawable(R.styleable.LoadingAnimation_barType)!!
+    //    Extracting Attribute form XML
+    private fun initTypeArray(typedArray: TypedArray) {
+        drawableFile = typedArray.getDrawable(R.styleable.LoadingAnimation_barType)
         textSize = typedArray.getDimension(R.styleable.LoadingAnimation_textSize, default_textSize)
         textColor = typedArray.getColor(R.styleable.LoadingAnimation_textColor, default_textColor);
         costumeMsg = typedArray.getString(R.styleable.LoadingAnimation_text).toString();
@@ -80,9 +80,7 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet) :
         bgprogress = findViewById(R.id.progBg);
         tvMsg = findViewById(R.id.textMsg);
 
-        if (drawableFile != null) {
-            setProgressVector(drawableFile);
-        }
+        drawableFile?.let { setProgressVector(it) }
 
         if (costumeMsg != null) {
             setTextMsg(costumeMsg);
@@ -96,7 +94,7 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet) :
         typedArray.recycle()
     }
 
-//    Set Gif on View
+    //    Set Gif on View
     fun setProgressVector(drawableFile: Drawable) {
         Glide
             .with(mContext)
@@ -104,34 +102,34 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet) :
             .into(imageView);
     }
 
-//    Set Massage Text
+    //    Set Massage Text
     fun setTextMsg(massage: String) {
         tvMsg.setText(massage)
     }
 
-//    Set text Bold
+    //    Set text Bold
     fun setTextStyle(boldText: Boolean) {
         if (boldText)
             tvMsg.setTypeface(Typeface.DEFAULT_BOLD);
     }
 
-//    Set TextColor
+    //    Set TextColor
     fun setTextColor(textColor: Int) {
         tvMsg.setTextColor(textColor)
     }
 
-//    SetText Size
+    //    SetText Size
     fun setTextSize(textSize: Float) {
         tvMsg.textSize = textSize;
     }
 
-//    Enlarge the gif file
+    //    Enlarge the gif file
     fun setEnlarge(enlarge: Int) {
         if (enlarge >= 1 && enlarge <= 10)
             imageView.getLayoutParams().height = enlarge * 100;
     }
 
-//    Set TextView visibility
+    //    Set TextView visibility
     fun setTextViewVisibility(isVisible:Boolean){
         if (isVisible)
             tvMsg.visibility=View.VISIBLE

@@ -1,28 +1,40 @@
 package com.example.loadinganimation
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.black_loading_anim)
-        FullScreencall();
-//        val loadingAnim=findViewById<LoadingAnimation>(R.id.loadinAnim);
+        //基于xml文件加载动画
+        setContentView(R.layout.loading_anim)//fork仓库后就是报错的，但是仍然可以使用
+        FullScreencall()
+        val loadingAnim=findViewById<LoadingAnimation>(R.id.loadinAnim)//fork仓库后就是报错的，但是仍然可以使用
 
-//        loadingAnim.setProgressVector(resources.getDrawable(R.drawable.black_three_dot_circle))
-//        loadingAnim.setTextViewVisibility(true)
-//        loadingAnim.setTextStyle(true)
-//        loadingAnim.setTextColor(Color.YELLOW)
-//        loadingAnim.setTextSize(12F)
-//        loadingAnim.setTextMsg("Please Wait")
-//        loadingAnim.setEnlarge(5)
+        loadingAnim.setProgressVector(resources.getDrawable(R.drawable.triad_ring))
+        loadingAnim.setTextViewVisibility(true)
+        loadingAnim.setTextStyle(true)
+        loadingAnim.setTextColor(Color.YELLOW)
+        loadingAnim.setTextSize(12F)
+        loadingAnim.setTextMsg("Please Wait")
+        loadingAnim.setEnlarge(5)
 
+        // 作为Dialog使用
+        val dialog = LoadingAnimationDialog(this)
+        dialog.setProgressVector(resources.getDrawable(R.drawable.triad_ring))
+        dialog.setTextViewVisibility(true)
+        dialog.setTextStyle(true)
+        dialog.setTextColor(Color.YELLOW)
+        dialog.setTextSize(12F)
+        dialog.setTextMsg("Please Wait")
+        dialog.setEnlarge(5)
+        dialog.show()
 
 
     }
