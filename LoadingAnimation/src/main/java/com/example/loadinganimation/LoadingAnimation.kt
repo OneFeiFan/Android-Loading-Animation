@@ -1,6 +1,5 @@
 package com.example.loadinganimation
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Color
@@ -11,8 +10,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.bumptech.glide.Glide
-import kotlin.properties.Delegates
+import pl.droidsonroids.gif.GifDrawable
+
+
 
 class LoadingAnimation(context: Context, attributeSet: AttributeSet?) :
     RelativeLayout(context, attributeSet) {
@@ -29,7 +29,7 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet?) :
     private var attrs: AttributeSet?;
     private var styleAttr: Int = 0;
     // Create some instance
-    private var drawableFile: Drawable? = context.getDrawable(R.drawable.triad_ring)
+    private var drawableFile: Int = R.drawable.triad_ring
     private lateinit var bgprogress: View
     private lateinit var view: View
     private lateinit var tvMsg: TextView
@@ -69,7 +69,7 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet?) :
 
     //    Extracting Attribute form XML
     private fun initTypeArray(typedArray: TypedArray) {
-        drawableFile = typedArray.getDrawable(R.styleable.LoadingAnimation_barType)
+        drawableFile = typedArray.getResourceId(R.styleable.LoadingAnimation_barType, R.drawable.triad_ring);
         textSize = typedArray.getDimension(R.styleable.LoadingAnimation_textSize, default_textSize)
         textColor = typedArray.getColor(R.styleable.LoadingAnimation_textColor, default_textColor);
         costumeMsg = typedArray.getString(R.styleable.LoadingAnimation_text).toString();
@@ -95,11 +95,9 @@ class LoadingAnimation(context: Context, attributeSet: AttributeSet?) :
     }
 
     //    Set Gif on View
-    fun setProgressVector(drawableFile: Drawable) {
-        Glide
-            .with(mContext)
-            .load(drawableFile)
-            .into(imageView);
+    fun setProgressVector(drawableFile:Int) {
+        val gifDrawable: GifDrawable = GifDrawable(resources, drawableFile)
+        imageView.setImageDrawable(gifDrawable);
     }
 
     //    Set Massage Text

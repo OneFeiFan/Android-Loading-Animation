@@ -24,7 +24,7 @@ class LoadingAnimationDialog(context: Context) : Dialog(context) {
     }
 
     // 将所有公共方法委托给 contentView
-    fun setProgressVector(drawableFile: Drawable) = contentView.setProgressVector(drawableFile)
+    fun setProgressVector(drawableFile: Int) = contentView.setProgressVector(drawableFile)
     fun setTextMsg(message: String) = contentView.setTextMsg(message)
     fun setTextStyle(boldText: Boolean) = contentView.setTextStyle(boldText)
     fun setTextColor(textColor: Int) = contentView.setTextColor(textColor)

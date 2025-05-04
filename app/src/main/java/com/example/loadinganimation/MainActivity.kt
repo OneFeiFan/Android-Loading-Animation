@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         FullScreencall()
         val loadingAnim=findViewById<LoadingAnimation>(R.id.loadinAnim)//fork仓库后就是报错的，但是仍然可以使用
 
-        loadingAnim.setProgressVector(resources.getDrawable(R.drawable.triad_ring))
+        loadingAnim.setProgressVector(R.drawable.triad_ring)
         loadingAnim.setTextViewVisibility(true)
         loadingAnim.setTextStyle(true)
         loadingAnim.setTextColor(Color.YELLOW)
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         // 作为Dialog使用
         val dialog = LoadingAnimationDialog(this)
-        dialog.setProgressVector(resources.getDrawable(R.drawable.triad_ring))
+        dialog.setProgressVector(R.drawable.triad_ring)
         dialog.setTextViewVisibility(true)
         dialog.setTextStyle(true)
         dialog.setTextColor(Color.YELLOW)
