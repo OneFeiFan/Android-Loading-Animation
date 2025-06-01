@@ -18,7 +18,7 @@
         android:layout_width="130dp"
         android:layout_height="match_parent"
         android:elevation="10dp"
-        app:barType="@drawable/clock"
+        app:barType="@drawable/triad_ring"
         app:boldText="false"
         app:enlarge="2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:layout_width="130dp"
         android:layout_height="match_parent"
         android:elevation="10dp"
-        app:barType="@drawable/clock"
+        app:barType="@drawable/triad_ring"
         app:boldText="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:layout_width="130dp"
         android:layout_height="match_parent"
         android:elevation="10dp"
-        app:barType="@drawable/bouncy_balls"
+        app:barType="@drawable/triad_ring"
         app:boldText="false"
         app:enlarge="2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/color_capsule"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/dot_anim"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -94,56 +94,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/dot_maker"
-            app:boldText="false"
-            app:enlarge="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:textColor="@color/purple_500"
-            app:textSize="15sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="horizontal">
-
-        <com.example.loadinganimation.LoadingAnimation
-            android:layout_width="130dp"
-            android:layout_height="match_parent"
-            android:elevation="10dp"
-            app:barType="@drawable/dot_swipe"
-            app:boldText="false"
-            app:enlarge="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:textColor="@color/purple_500"
-            app:textSize="15sp" />
-
-        <com.example.loadinganimation.LoadingAnimation
-            android:layout_width="130dp"
-            android:layout_height="match_parent"
-            android:elevation="10dp"
-            app:barType="@drawable/drop_anim"
-            app:boldText="false"
-            app:enlarge="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:textColor="@color/purple_500"
-            app:textSize="15sp" />
-
-        <com.example.loadinganimation.LoadingAnimation
-            android:layout_width="130dp"
-            android:layout_height="match_parent"
-            android:elevation="10dp"
-            app:barType="@drawable/fidget"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -164,7 +115,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/gear_duo"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -178,7 +129,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/hour_glass"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -192,7 +143,56 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            app:barType="@drawable/infinity_bar"
+            app:barType="@drawable/triad_ring"
+            app:boldText="false"
+            app:enlarge="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textColor="@color/purple_500"
+            app:textSize="15sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <com.example.loadinganimation.LoadingAnimation
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            app:barType="@drawable/triad_ring"
+            app:boldText="false"
+            app:enlarge="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textColor="@color/purple_500"
+            app:textSize="15sp" />
+
+        <com.example.loadinganimation.LoadingAnimation
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            app:barType="@drawable/triad_ring"
+            app:boldText="false"
+            app:enlarge="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textColor="@color/purple_500"
+            app:textSize="15sp" />
+
+        <com.example.loadinganimation.LoadingAnimation
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            app:barType="@drawable/triad_ring"
             app:boldText="false"
             app:enlarge="2"
             app:layout_constraintBottom_toBottomOf="parent"
