@@ -42,6 +42,6 @@ dependencies {
     androidTestImplementation libs.androidx.espresso.core
     //Glide image
 //    implementation libs.glide
-    annotationProcessor libs.compiler
+//    annotationProcessor libs.compiler
     implementation libs.android.gif.drawable
 }
